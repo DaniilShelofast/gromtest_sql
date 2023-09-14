@@ -4,16 +4,18 @@ constraint primary key ID_MOVIE (ID),
 TITLE nvarchar(50) not null unique,
 DIRECTOR nvarchar(20) not null,
 YEAR int check (YEAR between 1900 and 2023),
-LENGTH_MINS  bigint check (LENGTH_MINS between 10 and 200)
+LENGTH_MINS  int check (LENGTH_MINS between 10 and 200)
 );
 
 create table MOVIE_STAT(
 ID bigint,
 constraint primary key ID_MOVIE_STAT (ID),
-RATING decimal (2,1) check (RATING between 1 and 10),
-DOMESTIC_SALES bigint,
-INTERNATIONAL_SALES bigint
+RATING decimal (3,1) check (RATING between 1 and 10),
+DOMESTIC_SALES int,
+INTERNATIONAL_SALES int
 );
+
+-------------
 
 SELECT DIRECTOR, count(*) FROM movie
 group by DIRECTOR;
@@ -27,9 +29,8 @@ join movie_stat on movie_stat.ID = movie.ID
 group by DIRECTOR;
 
 ------------
-
-select TITLE,  max(YEAR) from movie_stat, movie
-group by TITLE;
+select * from movie
+order by YEAR desc;
 
 select * from movie_stat
 order by INTERNATIONAL_SALES desc;
