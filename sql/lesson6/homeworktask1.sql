@@ -21,18 +21,18 @@ SHIPPED_DATE timestamp,
 SHIPPER_ID bigint,
 constraint SHIPPER_ID foreign key (SHIPPER_ID) references shippers(SHIPPER_ID),
 FREIGHT int,
-SHIP_NAME nvarchar (50),
-SHIP_ADDRESS nvarchar (100),
-SHIP_CITY nvarchar (50),
-SHIP_REGION nvarchar (50),
+SHIP_NAME varchar (50),
+SHIP_ADDRESS varchar (100),
+SHIP_CITY varchar (50),
+SHIP_REGION varchar (50),
 SHIP_POSTAL_CODE int,
-SHIP_COUNTRY nvarchar(50)
+SHIP_COUNTRY varchar(50)
 );
 
 create table shippers (
 SHIPPER_ID bigint,
 constraint SHIPPERS_ID_PK primary key (SHIPPER_ID),
-COMPANY_NAME nvarchar (50),
+COMPANY_NAME varchar (50),
 PHONE int
 );
 
@@ -49,25 +49,25 @@ ADDRESS nvarchar (50),
 CITY nvarchar (50),
 REGION nvarchar (50),
 POSTAL_CODE int,
-COUNTRY nvarchar (50),
+COUNTRY varchar (50),
 HOME_PHONE int,
-EXTENSION nvarchar(100),
-PHOTO nvarchar (50),
-NOTES nvarchar (100),
-REPORTS_TO nvarchar(100)
+EXTENSION varchar(100),
+PHOTO varchar (50),
+NOTES varchar (100),
+REPORTS_TO varchar(100)
 );
 
 create table customers(
 CUSTOMER_ID bigint,
 constraint CUSTOMER_ID_PK primary key (CUSTOMER_ID),
-COMPANY_NAME nvarchar (50),
-CONTACT_NAME nvarchar(50),
-CONTACT_TITLE nvarchar (50),
-ADDRESS nvarchar (50),
-CITY nvarchar (50),
-REGION nvarchar (50),
-POSTAL_CODE nvarchar (50),
-COUNTRY nvarchar (50),
+COMPANY_NAME varchar (50),
+CONTACT_NAME varchar(50),
+CONTACT_TITLE varchar (50),
+ADDRESS varchar (50),
+CITY varchar (50),
+REGION varchar (50),
+POSTAL_CODE varchar (50),
+COUNTRY varchar (50),
 PHONE int,
 FAX int
 );
@@ -75,31 +75,31 @@ FAX int
 create table suppliers(
 SUPPLIER_ID bigint,
 constraint SUPPLIER_ID_PK primary key (SUPPLIER_ID),
-COMPANY_NAME nvarchar (50),
-CONTACT_NAME nvarchar (50),
-CONTACT_TITLE nvarchar (50),
-ADDRESS nvarchar (50),
-CITY nvarchar (50),
-REGION nvarchar (50),
+COMPANY_NAME varchar (50),
+CONTACT_NAME varchar (50),
+CONTACT_TITLE varchar (50),
+ADDRESS varchar (50),
+CITY varchar (50),
+REGION varchar (50),
 POSTAL_CODE int,
-COUNTRY nvarchar (50),
+COUNTRY varchar (50),
 PHONE int,
 FAX int,
-HOME_PAGE nvarchar (50)
+HOME_PAGE varchar (50)
 );
 
 create table categories(
 CATEGORY_ID bigint,
 constraint CATEGORY_ID_PK primary key(CATEGORY_ID),
-CATEGORY_NAME nvarchar (50),
-DESCRIPTION nvarchar (50),
-PICTURE nvarchar (50)
+CATEGORY_NAME varchar (50),
+DESCRIPTION varchar (50),
+PICTURE varchar (50)
 );
 
 create table products(
 PRODUCT_ID bigint,
 constraint PRODUCT_ID_PK primary key (PRODUCT_ID),
-PRODUCT_NAME nvarchar (100),
+PRODUCT_NAME varchar (100),
 SUPPLIER_ID bigint,
 constraint SUPPLIER_ID foreign key (SUPPLIER_ID) references suppliers (SUPPLIER_ID),
 CATEGORY_ID bigint,
