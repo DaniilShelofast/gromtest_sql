@@ -1,18 +1,18 @@
-create table MOVIE(
-ID bigint,
-constraint primary key ID_MOVIE (ID),
-TITLE nvarchar(50) not null unique,
-DIRECTOR nvarchar(20) not null,
-YEAR int check (YEAR between 1900 and 2023),
-LENGTH_MINS  int check (LENGTH_MINS between 10 and 200)
+CREATE TABLE MOVIE (
+    ID BIGINT,
+    CONSTRAINT PRIMARY KEY ID_MOVIE (ID),
+    TITLE NVARCHAR(50) NOT NULL UNIQUE,
+    DIRECTOR NVARCHAR(20) NOT NULL,
+    YEAR INT CHECK (YEAR BETWEEN 1900 AND 2023),
+    LENGTH_MINS INT CHECK (LENGTH_MINS BETWEEN 10 AND 200)
 );
 
-create table MOVIE_STAT(
-ID bigint,
-constraint primary key ID_MOVIE_STAT (ID),
-RATING decimal (3,1) check (RATING between 1 and 10),
-DOMESTIC_SALES int,
-INTERNATIONAL_SALES int
+CREATE TABLE MOVIE_STAT (
+    ID BIGINT,
+    CONSTRAINT PRIMARY KEY ID_MOVIE_STAT (ID),
+    RATING DECIMAL(3 , 1 ) CHECK (RATING BETWEEN 1 AND 10),
+    DOMESTIC_SALES INT,
+    INTERNATIONAL_SALES INT
 );
 
 -------------

@@ -1,18 +1,21 @@
-  create table HOTEL (
-  ID bigint,
-  CONSTRAINT HOTEL_ID PRIMARY KEY (ID),
-  COUNTRY nvarchar(50) default 'N/A',
-  CITY nvarchar(50) not null,
-  STREET nvarchar(50),
-  CONSTRAINT TEST_COUNTRY check (COUNTRY != 'Romania' and COUNTRY != 'China' and COUNTRY != 'Russia' and COUNTRY != 'Belgium')
-  );
+  CREATE TABLE HOTEL (
+    ID BIGINT,
+    CONSTRAINT HOTEL_ID PRIMARY KEY (ID),
+    COUNTRY NVARCHAR(50) DEFAULT 'N/A',
+    CITY NVARCHAR(50) NOT NULL,
+    STREET NVARCHAR(50),
+    CONSTRAINT TEST_COUNTRY CHECK (COUNTRY != 'Romania'
+        AND COUNTRY != 'China'
+        AND COUNTRY != 'Russia'
+        AND COUNTRY != 'Belgium')
+);
 
-  create table ORDERS (
-    ID bigint check (ID < 10000),
-    constraint ORDER_ID primary key(ID),
-    USER_ID bigint unique,
-    ROOM_ID bigint unique,
-    DATE_FROM timestamp,
-    DATE_TO timestamp,
-    MONEY_PAID decimal (10, 2)
-    );
+   CREATE TABLE ORDERS (
+     ID BIGINT CHECK (ID < 10000),
+     CONSTRAINT ORDER_ID PRIMARY KEY (ID),
+     USER_ID BIGINT UNIQUE,
+     ROOM_ID BIGINT UNIQUE,
+     DATE_FROM TIMESTAMP,
+     DATE_TO TIMESTAMP,
+     MONEY_PAID DECIMAL(10 , 2 )
+ );
