@@ -45,15 +45,15 @@ WHERE
 
 
 SELECT
-   customer.CUSTNAME
+    CUSTNAME
 FROM
-    salesman
+    customer
         JOIN
-    customer ON salesman.SALESMAN_ID = customer.SALESMAN_ID
+    SALESMAN ON customer.SALESMAN_ID = salesman.SALESMAN_ID
         JOIN
-    deal ON customer.CUSTOMER_ID = deal.CUSTOMER_ID
+    DEAL ON customer.CUSTOMER_ID = deal.CUSTOMER_ID
 WHERE
-    deal.DATE BETWEEN '2017-01-01' AND '2018-12-31';
+    YEAR(DATE) BETWEEN 2017 AND 2018;
 
 
 SELECT
@@ -65,6 +65,6 @@ FROM
         JOIN
     deal ON customer.CUSTOMER_ID = deal.CUSTOMER_ID
 WHERE
-    deal.DATE BETWEEN '2017-01-01' AND '2017-12-31'
+    deal.DATE BETWEEN '2017-08-01' AND '2017-08-31'
 GROUP BY salesman.NAME
 ORDER BY SUM(deal.AMOUNT) DESC
