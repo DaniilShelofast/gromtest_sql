@@ -4,7 +4,7 @@ drop column PHOTO,
 drop column REPORTS_TO;
 --------------------------------------------------
 alter table customers
-add column IS_ACTIVE int (1) not null default 0;
+add column IS_ACTIVE boolean not null;
 --------------------------------------------------
 alter table categories
 modify column PICTURE varchar(100) not null;
