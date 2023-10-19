@@ -49,8 +49,6 @@ SELECT
 FROM
     customer
         JOIN
-    SALESMAN ON customer.SALESMAN_ID = salesman.SALESMAN_ID
-        JOIN
     DEAL ON customer.CUSTOMER_ID = deal.CUSTOMER_ID
 WHERE
     YEAR(DATE) BETWEEN 2017 AND 2018;
