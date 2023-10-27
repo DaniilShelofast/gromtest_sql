@@ -1,8 +1,8 @@
-package lesson6.task3;
+package lesson6_database.task3;
 
-public class Suppliers {
+public class Customers {
 
-    private long supplierID;
+    private long customerID;
     private String companyName;
     private String contactName;
     private String contactTitle;
@@ -13,10 +13,9 @@ public class Suppliers {
     private String country;
     private int phone;
     private String fax;
-    private int homePage;
 
-    public Suppliers(long supplierID, String companyName, String contactName, String contactTitle, String address, String city, String region, String postalCode, String country, int phone, String fax, int homePage) {
-        this.supplierID = supplierID;
+    public Customers(long customerID, String companyName, String contactName, String contactTitle, String address, String city, String region, String postalCode, String country, int phone, String fax) {
+        this.customerID = customerID;
         this.companyName = companyName;
         this.contactName = contactName;
         this.contactTitle = contactTitle;
@@ -27,6 +26,5 @@ public class Suppliers {
         this.country = country;
         this.phone = phone;
         this.fax = fax;
-        this.homePage = homePage;
     }
 }

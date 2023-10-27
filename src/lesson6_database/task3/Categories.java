@@ -1,4 +1,4 @@
-package lesson6.task3;
+package lesson6_database.task3;
 
 public class Categories {
 
